@@ -22,22 +22,22 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>0/28</span>
+        <span class='fraction'>0/19</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>0/6</span>
+        <span class='fraction'>0/4</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>0/8</span>
+        <span class='fraction'>0/7</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">0% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>0/20</span>
+        <span class='fraction'>0/14</span>
       </div>
     </div>
   </div>
@@ -81,32 +81,10 @@
 36
 37
 38
-39
-40
-41
-42
-43
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
+39</td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -136,22 +114,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -161,10 +123,7 @@
 import { connect }<span class="cstat-no" title="statement not covered" > from 'react-redux';</span>
 import { setSea<span class="cstat-no" title="statement not covered" >rchField, requestRobot</span>s } from '../actions';
 &nbsp;
-import CardList <span class="cstat-no" title="statement not covered" >from '../components/CardList';<span class="cstat-no" title="statement not covered" ></span></span>
-import SearchBox <span class="cstat-no" title="statement not covered" >from '../components/SearchBox';<span class="cstat-no" title="statement not covered" ></span></span>
-import Scroll <span class="cstat-no" title="statement not covered" >from '../components/Scroll';<span class="cstat-no" title="statement not covered" ></span></span>
-import ErrorBoundry <span class="cstat-no" title="statement not covered" >from '../components/ErrorBoundry';<span class="cstat-no" title="statement not covered" ></span></span>
+import MainPage <span class="cstat-no" title="statement not covered" >from '../components/MainPage';<span class="cstat-no" title="statement not covered" ></span></span>
 &nbsp;
 <span class="cstat-no" title="statement not covered" >import './App.css';<span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" ></span></span></span>
 &nbsp;
@@ -192,23 +151,7 @@ class App extends Component {
   }
 &nbsp;
 <span class="fstat-no" title="function not covered" >  re</span>nder() {
-    const { robots, searchField, onSearchChange, isPending } = <span class="cstat-no" title="statement not covered" >this.props;</span>
-    const filteredRobots = <span class="cstat-no" title="statement not covered" >robots.filter(<span class="fstat-no" title="function not covered" >ro</span>bot =&gt; {</span>
-<span class="cstat-no" title="statement not covered" >      return robot.name.toLowerCase().includes(searchField.toLowerCase());</span>
-    })
-<span class="cstat-no" title="statement not covered" >    return (</span>
-      &lt;div className='tc'&gt;
-        &lt;h1 className='f1'&gt;RoboFriends&lt;/h1&gt;
-        &lt;SearchBox searchChange={onSearchChange}/&gt;
-        &lt;Scroll&gt;
-          { isPending ? &lt;h1&gt;Loading&lt;/h1&gt; :
-            &lt;ErrorBoundry&gt;
-              &lt;CardList robots={filteredRobots} /&gt;
-            &lt;/ErrorBoundry&gt;
-          }
-        &lt;/Scroll&gt;
-      &lt;/div&gt;
-    );
+<span class="cstat-no" title="statement not covered" >    return &lt;MainPage { ...this.props } /&gt;</span>
   }
 }
 &nbsp;
@@ -220,7 +163,7 @@ class App extends Component {
 </div><!-- /wrapper -->
 <div class='footer quiet pad2 space-top1 center small'>
   Code coverage
-  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Apr 04 2020 11:27:40 GMT+0800 (Singapore Standard Time)
+  generated by <a href="https://istanbul.js.org/" target="_blank">istanbul</a> at Sat Apr 04 2020 15:57:17 GMT+0800 (Singapore Standard Time)
 </div>
 </div>
 <script src="../../prettify.js"></script>
